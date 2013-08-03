@@ -1,0 +1,14 @@
+{
+    "name": "Overtime",
+    "main": "index-desktop.html",
+    "window": {
+        "title": "Overtime",
+        "toolbar": false,
+        "frame": true,
+        "width": "720",
+        "height": "480",
+        "position": "mouse",
+        "resizable": false,
+        "fullscreen": true
+    }
+}

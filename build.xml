@@ -1,0 +1,36 @@
+<project name="overtime" basedir="." default="create-exe">
+    <property name="nw.name" value="overtime.nw"/>
+    <property name="nw.dir" value="D:\Downloads\node-webkit-v0.6.3-win-ia32\node-webkit-v0.6.3-win-ia32"/>
+    <property name="exe.name" value="overtime.exe"/>
+
+    <target name="create-nw" depends="clean, bake">
+        <zip destfile="${nw.name}" update="false">
+            <zipfileset dir="${basedir}" includes="lib/**"/>
+            <zipfileset dir="${basedir}" includes="media/**"/>
+            <zipfileset dir="${basedir}" includes="index-desktop.html"/>
+            <zipfileset dir="${basedir}" includes="package.json"/>
+            <zipfileset dir="${basedir}" includes="game.min.js"/>
+        </zip>
+    </target>
+
+    <target name="clean">
+        <delete file="${basedir}/${nw.name}"/>
+    </target>
+
+    <target name="bake">
+        <exec dir="${basedir}/tools" executable="cmd">
+            <arg line="/c bake.bat"/>
+        </exec>
+    </target>
+
+    <target name="create-exe" depends="create-nw">
+        <move file="${nw.name}" todir="${nw.dir}"/>
+        <exec dir="${nw.dir}" executable="cmd">
+            <arg line="/c copy /b nw.exe+${nw.name} ${exe.name}"/>
+        </exec>
+        <move file="${nw.dir}/${exe.name}" todir="${basedir}/dist/windows"/>
+        <copy file="${nw.dir}/nw.pak" todir="${basedir}/dist/windows"/>
+        <copy file="${nw.dir}/icudt.dll" todir="${basedir}/dist/windows"/>
+        <delete file="${nw.dir}/${nw.name}"/>
+    </target>
+</project>
