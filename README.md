@@ -8,7 +8,7 @@ http://overdevelop.blogspot.com/
 Plugins used credit:
 * eventChain.js - https://github.com/drhayes/impactjs-eventchain
 
-Requires a ImpactJS license to compile &amp; run.
+Requires a ImpactJS license to run locally.
 http://impactjs.com/
 
 The MIT License (MIT)
