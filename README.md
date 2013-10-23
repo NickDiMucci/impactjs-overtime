@@ -1,6 +1,6 @@
 Overtime.
 ======
-This project was aimed to be a platformer with gameplay elements of Metroid and Castlevania. The project was quickly abondended in favor of switching technologies (Unity).
+This project was aimed to be a platformer with gameplay elements of Metroid and Castlevania. The project was quickly abandoned in favor of switching technologies (Unity).
 
 http://mindshaftgames.appspot.com/
 http://overdevelop.blogspot.com/
